@@ -2,7 +2,7 @@ const TGBasePage = require("./TGBasePage");
 
 class TGHtmlElementsPage extends TGBasePage {
 
-  /* Locators */
+  // Locators
   getButtons() {
     return cy.get('#register_button, #signin_button')
   }
@@ -15,7 +15,7 @@ class TGHtmlElementsPage extends TGBasePage {
     return this.getButtons().contains(label)
   }
 
-  /* Methods */
+  // Methods 
 
   clickButtonByText(label) {
     this.getButtonByText(label).click()
