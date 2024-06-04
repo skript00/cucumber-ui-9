@@ -1,4 +1,4 @@
-describe("template spec", () => {
+describe('template spec', () => {
   /**
    * Navigate to https://techglobal-training.com/frontend/project-2
    * Enter the username as “TechGlobal”
@@ -8,18 +8,18 @@ describe("template spec", () => {
    * Validate that the login form is displayed
    */
 
-  it("Test Case 03 - Validate the logout", () => {
-    cy.visit("https://example.cypress.io");
+  it('Test Case 03 - Validate the logout', () => {
+    cy.visit('https://example.cypress.io')
 
-    cy.get().type();
-    cy.get().type();
+    cy.get().type()
+    cy.get().type()
 
-    cy.get("").click();
-    cy.get("").click();
+    cy.get('').click()
+    cy.get('').click()
 
-    cy.get().should();
-  });
-});
+    cy.get().should()
+  })
+})
 
 /**
    * Scenario: User logs in and logs out successfully

@@ -1,5 +1,4 @@
 class TGBasePage {
-
   /* Locators */
   getLogo() {
     return cy.get('#logo')
