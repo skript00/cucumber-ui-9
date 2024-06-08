@@ -36,7 +36,13 @@ class SmartBearLogin {
       case 'Check All':
         this.getCheckAllButton().click()
         break
-      // default:
+      case 'Delete Selected':
+        this.getDeleteAllButton().click()
+        break
+      case 'Process':
+        this.getProcessButton().click()
+        break
+      // default: ctl00_MainContent_fmwOrder_InsertButton
     }
   }
 }

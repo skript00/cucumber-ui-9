@@ -36,3 +36,47 @@ Then(/^all rows should be checked$/, () => {
 Then(/^all rows should be unchecked$/, () => {
   smartB2.getCheckBoxes().should('not.be.checked')
 })
+
+Then(/^validate all orders are deleted from the List of All Orders$/, () => {
+  smartB2.getCheckBoxes().should('have.length', 0)
+})
+
+Then(/^validate user sees "([^"]*)" message$/, (message) => {
+  smartB2.getEmptyOrderMessage().should('contain', message)
+})
+
+When(/^user clicks on "([^"]*)" menu item$/, (label) => {
+  smartB2.selectMenu(label)
+})
+
+Then(/^user enters all product information$/, (dataTable) => {
+  const arr = dataTable.rawTable.flat()
+  smartB2.addProduct(...arr)
+})
+
+Then(/^user enters all address information$/, (dataTable) => {
+  const arr = dataTable.rawTable.flat()
+  smartB2.addAddress(...arr)
+})
+
+Then(/^user enters all payment information$/, (dataTable) => {
+  const arr = dataTable.rawTable.flat()
+  smartB2.addPayment(...arr)
+})
+
+Then(/^validate all information entered displayed correct with the order$/, (dataTable) => {
+  const arr = dataTable.rawTable.flat()
+  smartB2.getOrderRowDataByLine(1).each(($el, i) => {
+    if (i !== 0 && i !== 12) {
+      cy.log($el, i)
+      cy.wrap($el).should('contain', arr[i - 1])
+    }
+  })
+})
+
+Then(/^validate below menu items are displayed$/, (dataTable) => {
+  const arr = dataTable.rawTable.flat()
+  smartB2.getMenu().each(($el, index) => {
+    cy.wrap($el).should('contain', arr[index])
+  })
+})
