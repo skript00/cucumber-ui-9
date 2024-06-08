@@ -42,20 +42,20 @@ class SmartBearWeb extends SmartBearLogin {
   }
 
   addAddress(name, street, city, state, zip) {
-    cy.get('input[name="ctl00$MainContent$fmwOrder$txtName"]').type(name)
-    cy.get('input[name="ctl00$MainContent$fmwOrder$TextBox2"]').type(street)
-    cy.get('input[name="ctl00$MainContent$fmwOrder$TextBox3"]').type(city)
-    cy.get('input[name="ctl00$MainContent$fmwOrder$TextBox4"]').type(state)
-    cy.get('input[name="ctl00$MainContent$fmwOrder$TextBox5"]').type(zip)
+    cy.get('#ctl00_MainContent_fmwOrder_txtName').type(name)
+    cy.get('#ctl00_MainContent_fmwOrder_TextBox2').type(street)
+    cy.get('#ctl00_MainContent_fmwOrder_TextBox3').type(city)
+    cy.get('#ctl00_MainContent_fmwOrder_TextBox4').type(state)
+    cy.get('#ctl00_MainContent_fmwOrder_TextBox5').type(zip)
   }
   addProduct(product, quantity) {
     cy.get('#ctl00_MainContent_fmwOrder_ddlProduct').select(product)
-    cy.get('input[name="ctl00$MainContent$fmwOrder$txtQuantity"]').type(quantity)
+    cy.get('#ctl00_MainContent_fmwOrder_txtQuantity').type(quantity)
   }
   addPayment(card, cardN, cardExp) {
     cy.get('#ctl00_MainContent_fmwOrder_cardList').contains(card).prev().check()
-    cy.get('input[name="ctl00$MainContent$fmwOrder$TextBox6"]').type(cardN)
-    cy.get('input[name="ctl00$MainContent$fmwOrder$TextBox1"]').type(cardExp)
+    cy.get('#ctl00_MainContent_fmwOrder_TextBox6').type(cardN)
+    cy.get('#ctl00_MainContent_fmwOrder_TextBox1').type(cardExp)
   }
 
   // Methods
