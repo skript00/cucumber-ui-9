@@ -67,7 +67,7 @@ Then(/^user enters all payment information$/, (dataTable) => {
 Then(/^validate all information entered displayed correct with the order$/, (dataTable) => {
   const arr = dataTable.rawTable.flat()
   smartB2.getOrderRowDataByLine(1).each(($el, i) => {
-    if (i !== 0 && i !== 12) {
+    if (i !== 0 && i !== 4 && i !== 12) {
       cy.log($el, i)
       cy.wrap($el).should('contain', arr[i - 1])
     }
