@@ -18,3 +18,13 @@ Then(/^the URL should contain "([^"]*)"$/, (url) => {
 Then(/^user should see the "([^"]*)" page heading$/, (heading) => {
   tgHtmlElementsPage.getHeading().should('have.text', heading)
 })
+
+Then(/^user should see "([^"]*)" in the URL$/, (url) => {
+  for (const u of url.split(' ')) {
+    cy.url().should('contain', u)
+  }
+})
+
+Then(/^user should see "([^"]*)" in the title$/, (title) => {
+  cy.title().should('contain', title)
+})

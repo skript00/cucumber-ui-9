@@ -23,6 +23,10 @@ module.exports = defineConfig({
   viewportWidth: 1920,
   chromeWebSecurity: false,
   e2e: {
+    env: {
+      filterSpecs: true,
+      omitFiltered: true,
+    },
     specPattern: '**/*.feature',
     setupNodeEvents,
   },
